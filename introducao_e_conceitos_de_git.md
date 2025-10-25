@@ -42,7 +42,7 @@ Antes do Git, os desenvolvedores enfrentavam problemas como:
 
 - Perda de versões de arquivos.
 - Dificuldade em trabalhar simultaneamente com outras pessoas.
-- Falta de histórico claro sobre *quem alterou o quê e quando*. asdfasdfasf
+- Falta de histórico claro sobre *quem alterou o quê e quando*. asdfasdfasf aasfasdfasdf
 
 Esses problemas levaram à criação de **sistemas de controle de versão (VCS – Version Control Systems)**.
 
