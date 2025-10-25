@@ -2,8 +2,11 @@
 
 ## Objetivo
 
-Compreender o que é o Git, por que ele foi criado, como ele funciona internamente e as principais terminologias que sustentam o controle de versão distribuído.  
+Compreender1 o que1 é o Git, por que ele foi criado, como ele funciona internamente e as principais terminologias que sustentam o controle de versão distribuído.  
 Este módulo constrói a base teórica necessária antes de realizar qualquer comando prático.
+
+
+TEste teste teste
 
 ---
 
@@ -39,7 +42,7 @@ Antes do Git, os desenvolvedores enfrentavam problemas como:
 
 - Perda de versões de arquivos.
 - Dificuldade em trabalhar simultaneamente com outras pessoas.
-- Falta de histórico claro sobre *quem alterou o quê e quando*.
+- Falta de histórico claro sobre *quem alterou o quê e quando*. asdfasdfasf
 
 Esses problemas levaram à criação de **sistemas de controle de versão (VCS – Version Control Systems)**.
 
