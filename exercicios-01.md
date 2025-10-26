@@ -64,6 +64,31 @@ receitas-equipe-X/
 
 ## 📝 Parte 1: Configuração Inicial (20 minutos)
 
+### Requisitos
+
+1. **Configurar SSH:**
+
+```shell script
+vim ~/.ssh/config
+echo "Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
+  IdentitiesOnly yes
+  AddKeysToAgent yes" > ~/.ssh/config
+chmod 600 ~/.ssh/config
+```
+
+2. **Configurar Git Mergetool:**
+
+```shell script
+git config --global merge.tool code
+git config --global mergetool.code.cmd 'code --wait --merge "$REMOTE" "$LOCAL" "$BASE" "$MERGED"'
+git config --global mergetool.keepBackup false
+git config --global diff.tool vscode
+git config --global difftool.vscode.cmd 'code --wait --diff "$LOCAL" "$REMOTE"'
+```
+
 ### Instruções para o Líder Técnico
 
 1. **Configurar Git localmente:**
@@ -89,7 +114,7 @@ git config --global mergetool.vscode.cmd "code --wait $MERGED"
 3. **Clonar localmente:**
 
 ```shell script
-git clone https://github.com/SEU_USUARIO/receitas-equipe-X.git
+git clone git@github.com:rafael-negrao/receitas-equipe-X.git
 cd receitas-equipe-X
 ```
 
@@ -97,22 +122,8 @@ cd receitas-equipe-X
 
 ```shell script
 mkdir -p receitas/massas receitas/sobremesas receitas/salgados
+echo  > autores.md
 ```
-
-No macos ou linux:
-```shell script
-touch autores.md
-```
-
-No windows
-```powershell
-type nul > autores.md
-```
-ou 
-```shell
-echo. > autores.md
-```
-
 
 5. **Criar arquivo .gitignore:**
 
@@ -174,10 +185,13 @@ git checkout -b feature/receita-carbonara
 3. **Criar arquivo de receita:**
 
 ```shell script
-touch receitas/massas/carbonara.md
+mkdir -p receitas/massas
+echo > receitas/massas/carbonara.md
 ```
 
 4. **Editar o arquivo com a receita:**
+
+- Pode usar o Editor Bloco de Notas ou o VS Code
 
 ```markdown
 # Carbonara Tradicional
@@ -233,10 +247,13 @@ git checkout -b feature/receita-brownie
 2. **Criar arquivo de receita:**
 
 ```shell script
-touch receitas/sobremesas/brownie.md
+mkdir -p receitas/sobremesas
+echo > receitas/sobremesas/brownie.md
 ```
 
 3. **Editar o arquivo:**
+
+- Pode usar o Editor Bloco de Notas ou o VS Code
 
 ```markdown
 # Brownie de Chocolate
@@ -304,6 +321,8 @@ git push origin main
 **Missão:** Manter documentação atualizada
 
 1. **Atualizar README.md:**
+
+- Ficar atento para as pessoas do projeto, substituir [Nome] pelos nomes dos membros da equipe
 
 ```markdown
 # Catálogo de Receitas - Equipe X
@@ -423,6 +442,8 @@ git push origin main
 ```shell script
 git merge feature/adiciona-dicas
 # CONFLITO!
+
+git mergetool
 ```
 
 3. **Resolver conflito:**
