@@ -9,7 +9,7 @@ Colocar em prática os conceitos fundamentais do Git através de uma dinâmica c
 ## 👥 Informações da Turma
 
 - **Total de alunos:** 15 (alguns poderão faltar)
-- **Duração estimada:** 90-120 minutos
+- **Duração estimada:** 40 minutos
 - **Formato:** Trabalho em equipe com rotação de papéis
 
 ---
