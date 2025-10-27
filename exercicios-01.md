@@ -134,6 +134,7 @@ git config --list
 
 **O que é um repositório?**  
 É como uma "pasta inteligente" que guarda:
+
 - Todo o código do projeto
 - Histórico completo de mudanças
 - Quem mudou o quê e quando
@@ -164,9 +165,25 @@ mkdir -p receitas/massas receitas/sobremesas receitas/salgados
 echo  > autores.md
 ```
 
+**Decompondo o comando:**
+
+- `mkdir -p receitas/massas receitas/sobremesas receitas/salgados`
+    - `mkdir` = "make directory" (criar diretório)
+    - `-p` = parâmetro que significa "parents" (pais/ancestrais)
+        - O que o `-p` faz: Cria todas as pastas necessárias no caminho, mesmo que não existam.
+    - `receitas/massas` = caminho das pastas a serem criadas
+    - `receitas/sobremesas` = caminho das pastas a serem criadas
+    - `receitas/salgados` = caminho das pastas a serem criadas
+- `echo > receitas/massas/carbonara.md`
+    - `echo` = comando que imprime/exibe texto
+    - `>` = operador de redirecionamento de saída
+    - `autores.md` = caminho e nome do arquivo a ser criado
+
+
 4. **Criar arquivo .gitignore:**
 
 **Boas práticas:**
+
 - Sempre inclua `.gitignore` no projeto
 - Não versione senhas ou tokens
 - Ignore dependências que podem ser baixadas (ex: `node_modules/`)
@@ -190,6 +207,7 @@ Thumbs.db
 
 **O que é um commit?**  
 É um "snapshot" (foto) do projeto em determinado momento. Cada commit tem:
+
 - ID único (hash SHA)
 - Mensagem descritiva
 - Autor e data
@@ -201,9 +219,40 @@ git commit -m "feat: cria estrutura inicial do projeto de receitas"
 git push origin main
 ```
 
+**Decompondo o comando:**
+
+- `git add .`
+
+```
+git add .
+│   │   └─ Ponto (representa "tudo no diretório atual")
+│   └─ Subcomando add (adicionar)
+└─ Comando principal git
+```
+
+- `git commit -m "feat: cria estrutura inicial do projeto de receitas"`
+
+```
+git commit -m "feat: cria estrutura inicial do projeto de receitas"
+│   │      │   └─ Mensagem do commit
+│   │      └─ Flag -m (message - permite escrever mensagem inline)
+│   └─ Subcomando commit (gravar mudanças)
+└─ Comando principal git
+```
+
+- `git push origin main`
+
+```
+git push origin main
+│   │    │      └─ Branch de destino (branch principal)
+│   │    └─ Nome do repositório remoto (apelido do GitHub)
+│   └─ Subcomando push (enviar)
+└─ Comando principal git
+```
+
 5. **Adicionar colaboradores:**
 
-> Executar este passo caso  o item 1 foi executado
+> Executar este passo caso o item 1 foi executado
 
 - Settings → Collaborators → Add people
 - Adicionar todos os membros da equipe
@@ -235,18 +284,22 @@ cd receitas-equipe-X
 ```shell script
 git checkout -b feature/receita-carbonara
 ```
+
 **Decompondo o comando:**
+
 - `git checkout` = mudar de branch
 - `-b` = criar nova branch
 - `feature/receita-carbonara` = nome da branch
 
 **Convenção de nomenclatura:**
+
 - `feature/` = nova funcionalidade
 - `fix/` = correção de bug
 - `docs/` = documentação
 - Nome descritivo do que será feito
 
 **O que acontece internamente?**
+
 - Git cria novo ponteiro a partir da branch atual
 - Seu workspace muda para essa nova branch
 - Commits serão feitos nessa branch
@@ -255,27 +308,23 @@ git checkout -b feature/receita-carbonara
 3. **Criar arquivo de receita:**
 
 - Executar o comando abaixo
+
 ```shell script
 mkdir -p receitas/massas
-```
-
-**Decompondo o comando:**
-- `mkdir` = "make directory" (criar diretório)
-- `-p` = parâmetro que significa "parents" (pais/ancestrais)
-- `receitas/massas` = caminho das pastas a serem criadas
-
-O que o -p faz:
-Cria todas as pastas necessárias no caminho, mesmo que não existam.
-
-- Executar o comando abaixo
-```shell
 echo > receitas/massas/carbonara.md
 ```
-**Decompondo o comando:**
-- `echo` = comando que imprime/exibe texto
-- `>` = operador de redirecionamento de saída
-- `receitas/massas/carbonara.md` = caminho e nome do arquivo a ser criado
 
+**Decompondo o comando:**
+
+- `mkdir -p receitas/massas`
+    - `mkdir` = "make directory" (criar diretório)
+    - `-p` = parâmetro que significa "parents" (pais/ancestrais)
+        - O que o `-p` faz: Cria todas as pastas necessárias no caminho, mesmo que não existam.
+    - `receitas/massas` = caminho das pastas a serem criadas
+- `echo > receitas/massas/carbonara.md`
+    - `echo` = comando que imprime/exibe texto
+    - `>` = operador de redirecionamento de saída
+    - `receitas/massas/carbonara.md` = caminho e nome do arquivo a ser criado
 
 4. **Editar o arquivo com a receita:**
 
@@ -379,6 +428,78 @@ git push origin feature/receita-brownie
 ```shell script
 git fetch --all
 git branch -a
+```
+
+**Decompondo o comando:**
+
+- `git fetch --all`
+
+```
+git fetch --all
+│   │     └─ Flag: buscar de todos os remotos
+│   └─ Subcomando fetch (buscar)
+└─ Comando principal git
+```
+
+**O que é git fetch?**
+
+- É o comando que sincroniza metadados do repositório remoto com seu repositório local.
+
+O que ele baixa:
+
+- ✅ Novos commits que existem no remoto
+- ✅ Novas branches criadas por outros
+- ✅ Atualizações em branches existentes
+- ✅ Tags e referências
+- ❌ NÃO modifica seus arquivos de trabalho
+- ❌ NÃO faz merge automático
+
+Analogia:
+
+- É como verificar notificações sem abrir as mensagens
+- Você fica sabendo o que há de novo, mas não aplica ainda
+
+Diferença: fetch vs pull
+
+ Comando   | O que faz                               | Seguro?                  | Quando usar                        |
+-----------|-----------------------------------------|--------------------------|------------------------------------|
+ git fetch | Baixa info, **não aplica**              | ✅ Sim                    | Revisar antes de integrar          |
+ git pull  | Baixa info **e aplica** (fetch + merge) | ⚠️ Pode causar conflitos | Quando quer integrar imediatamente |
+
+Visualização:
+```
+git fetch
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Remoto (GitHub)          Local
+┌─────────────┐         ┌─────────────────────┐
+│ main        │         │ origin/main (atualiza)
+│ ├─ commit A │  fetch  │ ├─ commit A         │
+│ ├─ commit B │ ──────► │ ├─ commit B         │
+│ └─ commit C │         │ └─ commit C (novo!) │
+└─────────────┘         │                     │
+                        │ main (não muda)     │
+                        │ └─ commit B         │
+                        └─────────────────────┘
+                             ↑
+                        Seus arquivos
+                        não mudam!
+
+
+git pull (fetch + merge)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Remoto (GitHub)          Local
+┌─────────────┐         ┌─────────────────────┐
+│ main        │         │ origin/main         │
+│ ├─ commit A │  pull   │ ├─ commit A         │
+│ ├─ commit B │ ──────► │ ├─ commit B         │
+│ └─ commit C │         │ └─ commit C         │
+└─────────────┘         │                     │
+                        │ main (atualiza!)    │
+                        │ └─ commit C         │
+                        └─────────────────────┘
+                             ↑
+                        Seus arquivos
+                        são atualizados!
 ```
 
 2. **Para cada branch de feature, revisar:**
