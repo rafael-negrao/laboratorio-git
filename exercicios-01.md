@@ -469,24 +469,24 @@ Diferença: fetch vs pull
 Visualização:
 ```
 git fetch
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Remoto (GitHub)          Local
-┌─────────────┐         ┌─────────────────────┐
-│ main        │         │ origin/main (atualiza)
-│ ├─ commit A │  fetch  │ ├─ commit A         │
-│ ├─ commit B │ ──────► │ ├─ commit B         │
-│ └─ commit C │         │ └─ commit C (novo!) │
-└─────────────┘         │                     │
-                        │ main (não muda)     │
-                        │ └─ commit B         │
-                        └─────────────────────┘
+┌─────────────┐         ┌───────────────────────┐
+│ main        │         │ origin/main (atualiza)│
+│ ├─ commit A │  fetch  │ ├─ commit A           │
+│ ├─ commit B │ ──────► │ ├─ commit B           │
+│ └─ commit C │         │ └─ commit C (novo!)   │
+└─────────────┘         │                       │
+                        │ main (não muda)       │
+                        │ └─ commit B           │
+                        └───────────────────────┘
                              ↑
                         Seus arquivos
                         não mudam!
 
 
 git pull (fetch + merge)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Remoto (GitHub)          Local
 ┌─────────────┐         ┌─────────────────────┐
 │ main        │         │ origin/main         │
