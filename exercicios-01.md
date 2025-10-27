@@ -87,6 +87,7 @@ SSH (Secure Shell) é um protocolo de comunicação segura. Ao invés de digitar
 #### 1. **Configurar SSH:**
 
 - *Executar este comando:*
+
 ```shell script
 vim ~/.ssh/config
 echo "Host github.com
@@ -103,7 +104,6 @@ chmod 600 ~/.ssh/config
 - Cria um arquivo de configuração SSH
 - Define qual chave usar para o GitHub
 - Automatiza a autenticação
-
 
 **Explicação linha por linha:**
 
@@ -158,14 +158,18 @@ git config --list
 É a primeira coisa que as pessoas veem ao acessar o projeto. Explica o que é e como usar.
 
 2. **Clonar localmente:**
-  - *Executar este comando:*
+
+- *Executar este comando:*
+
 ```shell script
 git clone git@github.com:rafael-negrao/receitas-equipe-X.git
 cd receitas-equipe-X
 ```
 
 3. **Criar estrutura inicial:**
-  - *Executar este comando:*
+
+- *Executar este comando:*
+
 ```shell script
 mkdir -p receitas/massas receitas/sobremesas receitas/salgados
 echo  > autores.md
@@ -212,6 +216,7 @@ Thumbs.db
 5. **Fazer commit inicial:**
 
 - *Executar este comando:*
+
 ```shell script
 git add .
 git commit -m "feat: cria estrutura inicial do projeto de receitas"
@@ -282,6 +287,7 @@ git push origin main
 1. **Clonar repositório:**
 
 - *Executar este comando:*
+
 ```shell script
 git clone git@github.com:rafael-negrao/receitas-equipe-X.git
 cd receitas-equipe-X
@@ -290,15 +296,17 @@ cd receitas-equipe-X
 2. **Criar e mudar para nova branch:**
 
 - *Executar este comando:*
+
 ```shell script
 git checkout -b feature/receita-carbonara
 ```
 
 **Decompondo o comando:**
+
 - `git checkout -b feature/receita-carbonara`
-  - `git checkout` = mudar de branch
-  - `-b` = criar nova branch
-  - `feature/receita-carbonara` = nome da branch
+    - `git checkout` = mudar de branch
+    - `-b` = criar nova branch
+    - `feature/receita-carbonara` = nome da branch
 
 **Convenção de nomenclatura:**
 
@@ -317,6 +325,7 @@ git checkout -b feature/receita-carbonara
 3. **Criar arquivo de receita:**
 
 - *Executar este comando:*
+
 ```shell script
 mkdir -p receitas/massas
 echo > receitas/massas/carbonara.md
@@ -361,6 +370,7 @@ echo > receitas/massas/carbonara.md
 5. **Adicionar à staging area:**
 
 - *Executar este comando:*
+
 ```shell script
 git status
 git add receitas/massas/carbonara.md
@@ -394,6 +404,7 @@ git status
 6. **Fazer commit:**
 
 - *Executar este comando:*
+
 ```shell script
 git commit -m "feat: adiciona receita de carbonara tradicional"
 ```
@@ -401,6 +412,7 @@ git commit -m "feat: adiciona receita de carbonara tradicional"
 7. **Enviar para o repositório remoto:**
 
 - *Executar este comando:*
+
 ```shell script
 git push origin feature/receita-carbonara
 ```
@@ -412,6 +424,7 @@ git push origin feature/receita-carbonara
 1. **Clonar repositório e criar branch:**
 
 - *Executar este comando:*
+
 ```shell script
 git clone https://github.com/LIDER/receitas-equipe-X.git
 cd receitas-equipe-X
@@ -421,6 +434,7 @@ git checkout -b feature/receita-brownie
 2. **Criar arquivo de receita:**
 
 - *Executar este comando:*
+
 ```shell script
 mkdir -p receitas/sobremesas
 echo > receitas/sobremesas/brownie.md
@@ -452,6 +466,7 @@ echo > receitas/sobremesas/brownie.md
 4. **Fazer commit e push:**
 
 - *Executar este comando:*
+
 ```shell script
 git add receitas/sobremesas/brownie.md
 git commit -m "feat: adiciona receita de brownie de chocolate"
@@ -465,6 +480,7 @@ git push origin feature/receita-brownie
 1. **Verificar branches remotas:**
 
 - *Executar este comando:*
+
 ```shell script
 git fetch --all
 git branch -a
@@ -501,10 +517,10 @@ Analogia:
 
 Diferença: fetch vs pull
 
- Comando   | O que faz                               | Seguro?                  | Quando usar                        |
------------|-----------------------------------------|--------------------------|------------------------------------|
- git fetch | Baixa info, **não aplica**              | ✅ Sim                    | Revisar antes de integrar          |
- git pull  | Baixa info **e aplica** (fetch + merge) | ⚠️ Pode causar conflitos | Quando quer integrar imediatamente |
+| Comando   | O que faz                               | Seguro?                  | Quando usar                        |
+|-----------|-----------------------------------------|--------------------------|------------------------------------|
+| git fetch | Baixa info, **não aplica**              | ✅ Sim                    | Revisar antes de integrar          |
+| git pull  | Baixa info **e aplica** (fetch + merge) | ⚠️ Pode causar conflitos | Quando quer integrar imediatamente |
 
 Visualização:
 
@@ -546,6 +562,7 @@ Remoto (GitHub)          Local
 2. **Para cada branch de feature, revisar:**
 
 - *Executar este comando:*
+
 ```shell script
 git checkout feature/receita-carbonara
 git log --oneline
@@ -553,16 +570,20 @@ git diff main..feature/receita-carbonara
 ```
 
 **Decomposição:**
+
 - `git log --oneline`
-  - O que é git log?
-    - É o comando para explorar o histórico do projeto. Mostra todos os commits feitos, como um "livro de registro" ou "linha do tempo".
+    - O que é git log?
+        - É o comando para explorar o histórico do projeto. Mostra todos os commits feitos, como um "livro de registro" ou "linha do tempo".
+
 ```
 git log --oneline
 │   │   └─ Flag: formato resumido (uma linha por commit)
 │   └─ Subcomando log (histórico/registro)
 └─ Comando principal git
 ```
+
 - `git diff main..feature/receita-carbonara`
+
 ```
 git diff main..feature/receita-carbonara
 │   │    │    └─ Branch de destino (ponto final da comparação)
@@ -577,18 +598,20 @@ git diff main..feature/receita-carbonara
 É o comando para comparar versões de arquivos, commits ou branches.
 
 Analogia:
+
 - Como a função "comparar documentos" do Word
 - Mostra o que foi **adicionado, removido ou modificado**
 - Linha por linha, caractere por caractere
 
 3. **Validar mensagens de commit:**
-   - Seguem padrão Conventional Commits?
-   - São claras e descritivas?
-   - Estão no imperativo?
+    - Seguem padrão Conventional Commits?
+    - São claras e descritivas?
+    - Estão no imperativo?
 
 4. **Fazer merge na main:**
 
 - *Executar este comando:*
+
 ```shell script
 git checkout main
 git merge feature/receita-carbonara
@@ -658,6 +681,7 @@ Este é um catálogo colaborativo de receitas culinárias.
 3. **Fazer commit das atualizações:**
 
 - *Executar este comando:*
+
 ```shell script
 git add README.md autores.md
 git commit -m "docs: atualiza documentação do projeto"
@@ -673,7 +697,7 @@ git push origin main
 
 ---
 
-## 📝 Parte 3: Simulando Conflitos (30 minutos)
+## 📝 Parte 3: Simulando Conflitos
 
 ### Cenário de Conflito
 
@@ -682,6 +706,7 @@ Dois desenvolvedores editarão o mesmo arquivo simultaneamente.
 ### Desenvolvedor 1
 
 - *Executar este comando:*
+
 ```shell script
 git checkout main
 git pull origin main
@@ -698,6 +723,7 @@ git push origin feature/atualiza-readme
 ### Desenvolvedor 2 (trabalha ao mesmo tempo)
 
 - *Executar este comando:*
+
 ```shell script
 git checkout main
 git pull origin main
@@ -716,6 +742,7 @@ git push origin feature/adiciona-dicas
 1. **Fazer merge da primeira branch:**
 
 - *Executar este comando:*
+
 ```shell script
 git checkout main
 git merge feature/atualiza-readme
@@ -725,12 +752,14 @@ git push origin main
 2. **Tentar merge da segunda branch:**
 
 - *Executar este comando:*
+
 ```shell script
 git merge feature/adiciona-dicas
 # CONFLITO!
 ```
 
 - *Executar este comando:*
+
 ```shell script
 git mergetool
 ```
@@ -738,6 +767,7 @@ git mergetool
 3. **Resolver conflito:**
 
 - *Executar este comando:*
+
 ```shell script
 # Abrir README.md e resolver manualmente
 # Manter ambas as seções
@@ -764,6 +794,7 @@ git push origin main
 1. **Ver histórico completo:**
 
 - *Executar este comando:*
+
 ```shell script
 git log --oneline --graph --all
 ```
@@ -771,6 +802,7 @@ git log --oneline --graph --all
 2. **Ver diferenças entre commits:**
 
 - *Executar este comando:*
+
 ```shell script
 git log -p -2
 ```
@@ -778,6 +810,7 @@ git log -p -2
 3. **Ver quem modificou cada linha:**
 
 - *Executar este comando:*
+
 ```shell script
 git blame README.md
 ```
@@ -785,6 +818,7 @@ git blame README.md
 4. **Ver mudanças de um arquivo específico:**
 
 - *Executar este comando:*
+
 ```shell script
 git log --follow receitas/massas/carbonara.md
 ```
@@ -792,11 +826,13 @@ git log --follow receitas/massas/carbonara.md
 5. **Buscar commits por autor:**
 
 - *Executar este comando:*
+
 ```shell script
 git log --author="Nome"
 ```
 
 - *Executar este comando:*
+
 6. **Ver estado do repositório:**
 
 ```shell script
@@ -820,6 +856,7 @@ git branch -a
 1. **Criar uma tag para versão 1.0:**
 
 - *Executar este comando:*
+
 ```shell script
 git tag -a v1.0 -m "Versão 1.0: Catálogo inicial com 2 receitas"
 git push origin v1.0
@@ -836,6 +873,7 @@ git push origin v1.0
 3. **Fazer commit final:**
 
 - *Executar este comando:*
+
 ```shell script
 git add .gitattributes
 git commit -m "chore: adiciona configuração de atributos do git"
