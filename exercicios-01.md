@@ -426,7 +426,7 @@ git push origin feature/receita-carbonara
 - *Executar este comando:*
 
 ```shell script
-git clone https://github.com/LIDER/receitas-equipe-X.git
+git clone git@github.com:rafael-negrao/receitas-equipe-X.git
 cd receitas-equipe-X
 git checkout -b feature/receita-brownie
 ```
