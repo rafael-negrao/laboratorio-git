@@ -504,6 +504,16 @@ echo > receitas/sobremesas/brownie.md
 
 4. **Fazer commit e push:**
 
+Observar os arquivos que foram criados e estão pendentes de commit.
+
+- *Executar este comando:*
+
+```shell script
+git status
+```
+
+Fazer o commit e push.
+
 - *Executar este comando:*
 
 ```shell script
