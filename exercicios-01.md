@@ -390,10 +390,19 @@ echo > receitas/massas/carbonara.md
 
 5. **Adicionar à staging area:**
 
+Observar os arquivos que foram criados e estão pendentes de commit.
+
 - *Executar este comando:*
 
 ```shell script
 git status
+```
+
+Adicionar os arquivos na área de staging.
+
+- *Executar este comando:*
+
+```shell script
 git add receitas/massas/carbonara.md
 ```
 
