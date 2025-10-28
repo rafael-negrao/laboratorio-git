@@ -172,7 +172,10 @@ cd receitas-equipe-X
 
 ```shell script
 mkdir -p receitas/massas receitas/sobremesas receitas/salgados
-echo  > autores.md
+echo "# Este arquivo mantém o diretório no Git" > receitas/massas/.gitkeep
+echo "# Este arquivo mantém o diretório no Git" > receitas/sobremesas/.gitkeep
+echo "# Este arquivo mantém o diretório no Git" > receitas/salgados/.gitkeep
+echo > autores.md
 ```
 
 **Decompondo o comando:**
