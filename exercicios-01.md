@@ -308,6 +308,14 @@ cd receitas-equipe-X
 
 2. **Criar e mudar para nova branch:**
 
+Puxar as atualizações
+
+- *Executar este comando:*
+
+```shell script
+git pull
+```
+
 - *Executar este comando:*
 
 ```shell script
