@@ -453,11 +453,20 @@ git push origin feature/receita-carbonara
 
 1. **Clonar repositório e criar branch:**
 
+Fazer o clone do projeto.
+
 - *Executar este comando:*
 
 ```shell script
 git clone git@github.com:rafael-negrao/receitas-equipe-X.git
 cd receitas-equipe-X
+```
+
+Criar uma nova branch.
+
+- *Executar este comando:*
+
+```shell script
 git checkout -b feature/receita-brownie
 ```
 
