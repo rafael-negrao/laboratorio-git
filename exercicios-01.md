@@ -218,6 +218,16 @@ Thumbs.db
 
 5. **Fazer commit inicial:**
 
+Observar os arquivos que foram criados e estão pendentes de commit.
+
+- *Executar este comando:*
+
+```shell script
+git status
+```
+
+Fazer o commit inicial.
+
 - *Executar este comando:*
 
 ```shell script
