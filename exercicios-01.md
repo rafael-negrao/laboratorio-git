@@ -765,6 +765,14 @@ git push origin main
 
 1. **Atualizar `README.md`:**
 
+Fazer o clone do projeto.
+
+- *Executar este comando:*
+
+```shell script
+git clone git@github.com:rafael-negrao/receitas-equipe-X.git
+```
+
 - Ficar atento para as pessoas do projeto, substituir [Nome] pelos nomes dos membros da equipe
 
 ```markdown
