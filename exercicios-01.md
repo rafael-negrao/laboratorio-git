@@ -89,7 +89,6 @@ SSH (Secure Shell) é um protocolo de comunicação segura. Ao invés de digitar
 - *Executar este comando:*
 
 ```shell script
-vim ~/.ssh/config
 echo "Host github.com
   HostName github.com
   User git
