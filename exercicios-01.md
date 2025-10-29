@@ -526,7 +526,17 @@ git push origin feature/receita-brownie
 
 **Missão:** Validar as mudanças e fazer merge
 
-1. **Verificar branches remotas:**
+1. **Clonar repositório:**
+
+Fazer o clone do projeto.
+
+- *Executar este comando:*
+
+```shell script
+git clone git@github.com:rafael-negrao/receitas-equipe-X.git
+```
+
+2. **Verificar branches remotas:**
 
 - *Executar este comando:*
 
@@ -608,13 +618,22 @@ Remoto (GitHub)          Local
                         são atualizados!
 ```
 
-2. **Para cada branch de feature, revisar:**
+3. **Para cada branch de feature, revisar:**
+
+Fazer o checkout da branch.
 
 - *Executar este comando:*
 
 ```shell script
 git checkout feature/receita-carbonara
 git log --oneline
+```
+
+Fazer a comparação entre as duas branches.
+
+- *Executar este comando:*
+
+```shell script
 git diff main..feature/receita-carbonara
 ```
 
@@ -652,22 +671,81 @@ Analogia:
 - Mostra o que foi **adicionado, removido ou modificado**
 - Linha por linha, caractere por caractere
 
-3. **Validar mensagens de commit:**
+4. **Validar mensagens de commit:**
     - Seguem padrão Conventional Commits?
     - São claras e descritivas?
     - Estão no imperativo?
 
-4. **Fazer merge na main:**
+5. **Fazer merge na main:**
+
+Fazer o checkout da branch main.
 
 - *Executar este comando:*
 
 ```shell script
 git checkout main
+```
+
+Fazer o merge da branch feature/receita-carbonara com a main.
+
+- *Executar este comando:*
+
+```shell script
 git merge feature/receita-carbonara
 git push origin main
 ```
 
-5. **Repetir para a segunda feature**
+Fazer o push do merge para main
+
+- *Executar este comando:*
+
+```shell script
+git push origin main
+```
+
+6. **Repetir o processo para a segunda feature `feature/receita-brownie`**
+
+Fazer o checkout da branch.
+
+- *Executar este comando:*
+
+```shell script
+git checkout feature/receita-brownie
+git log --oneline
+```
+
+Fazer a comparação entre as duas branches.
+
+- *Executar este comando:*
+
+```shell script
+git diff main..feature/receita-brownie
+```
+Fazer o checkout da branch main.
+
+- *Executar este comando:*
+
+```shell script
+git checkout main
+```
+
+Fazer o merge da branch feature/receita-brownie com a main.
+
+- *Executar este comando:*
+
+```shell script
+git merge feature/receita-brownie
+git push origin main
+```
+
+Fazer o push do merge para main
+
+- *Executar este comando:*
+
+```shell script
+git push origin main
+```
+
 
 ### Instruções para o Documentador
 
