@@ -545,6 +545,8 @@ git fetch --all
 git branch -a
 ```
 
+> Usar o `q` para voltar ao terminal
+
 **Decompondo o comando:**
 
 - `git fetch --all`
@@ -745,7 +747,6 @@ Fazer o push do merge para main
 ```shell script
 git push origin main
 ```
-
 
 ### Instruções para o Documentador
 
