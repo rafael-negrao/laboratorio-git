@@ -898,6 +898,7 @@ git push origin feature/adiciona-dicas
 
 ```shell script
 git checkout main
+git pull origin main
 git merge feature/atualiza-readme
 git push origin main
 ```
