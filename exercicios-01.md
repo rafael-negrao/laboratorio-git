@@ -893,16 +893,55 @@ git push origin feature/adiciona-dicas
 
 1. **Fazer merge da primeira branch:**
 
+Recuperar todas as atualizações do projeto.
+
+- *Executar este comando:*
+
+```shell script
+git pull
+```
+
+Fazer o checkout da branch `feature/atualiza-readme` para criar ela localmente no repositório.
+
+- *Executar este comando:*
+
+```shell script
+git checkout feature/atualiza-readme
+```
+
+Fazer o checkout da branch `main`
+
 - *Executar este comando:*
 
 ```shell script
 git checkout main
-git pull origin main
+```
+
+Fazer o merge da branch `feature/atualiza-readme` com a `main`.
+
+- *Executar este comando:*
+
+```shell
 git merge feature/atualiza-readme
-git push origin main
 ```
 
 2. **Tentar merge da segunda branch:**
+
+Fazer o checkout da branch `feature/adiciona-dicas` para criar ela localmente no repositório.
+
+- *Executar este comando:*
+
+```shell script
+git checkout feature/adiciona-dicas
+```
+
+Fazer o checkout da branch `main`
+
+- *Executar este comando:*
+
+```shell script
+git checkout main
+```
 
 - *Executar este comando:*
 
