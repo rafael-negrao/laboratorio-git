@@ -773,6 +773,12 @@ Fazer o clone do projeto.
 git clone git@github.com:rafael-negrao/receitas-equipe-X.git
 ```
 
+- *Executar este comando:*
+
+```shell script
+git pull
+```
+
 - Ficar atento para as pessoas do projeto, substituir [Nome] pelos nomes dos membros da equipe
 
 ```markdown
