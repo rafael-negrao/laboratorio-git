@@ -631,6 +631,8 @@ git checkout feature/receita-carbonara
 git log --oneline
 ```
 
+> Usar o `q` para voltar ao terminal
+
 Fazer a comparação entre as duas branches.
 
 - *Executar este comando:*
@@ -638,6 +640,8 @@ Fazer a comparação entre as duas branches.
 ```shell script
 git diff main..feature/receita-carbonara
 ```
+
+> Usar o `q` para voltar ao terminal
 
 **Decomposição:**
 
@@ -694,7 +698,6 @@ Fazer o merge da branch feature/receita-carbonara com a main.
 
 ```shell script
 git merge feature/receita-carbonara
-git push origin main
 ```
 
 Fazer o push do merge para main
@@ -716,6 +719,8 @@ git checkout feature/receita-brownie
 git log --oneline
 ```
 
+> Usar o `q` para voltar ao terminal
+
 Fazer a comparação entre as duas branches.
 
 - *Executar este comando:*
@@ -723,6 +728,9 @@ Fazer a comparação entre as duas branches.
 ```shell script
 git diff main..feature/receita-brownie
 ```
+
+> Usar o `q` para voltar ao terminal
+
 Fazer o checkout da branch main.
 
 - *Executar este comando:*
@@ -737,7 +745,6 @@ Fazer o merge da branch feature/receita-brownie com a main.
 
 ```shell script
 git merge feature/receita-brownie
-git push origin main
 ```
 
 Fazer o push do merge para main
