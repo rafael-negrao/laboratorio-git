@@ -700,6 +700,8 @@ Fazer o merge da branch feature/receita-carbonara com a main.
 git merge feature/receita-carbonara
 ```
 
+> Digitar `:wq` + enter para salvar, fechar o arquivo e voltar ao terminal
+
 Fazer o push do merge para main
 
 - *Executar este comando:*
@@ -746,6 +748,8 @@ Fazer o merge da branch feature/receita-brownie com a main.
 ```shell script
 git merge feature/receita-brownie
 ```
+
+> Digitar `:wq` + enter para salvar, fechar o arquivo e voltar ao terminal
 
 Fazer o push do merge para main
 
