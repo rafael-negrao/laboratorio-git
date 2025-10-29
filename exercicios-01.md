@@ -977,7 +977,7 @@ git push origin main
 
 ---
 
-## 📝 Parte 4: Explorando o Histórico (20 minutos)
+## 📝 Parte 4: Explorando o Histórico
 
 ### Todos os Membros
 
@@ -991,12 +991,33 @@ git push origin main
 git log --oneline --graph --all
 ```
 
+**Decomposição do comando:**
+
+```
+git log --oneline --graph --all
+│   │   │         │       └─ Flag: mostrar TODAS as branches
+│   │   │         └─ Flag: desenhar gráfico ASCII
+│   │   └─ Flag: formato resumido (uma linha)
+│   └─ Subcomando log (histórico)
+└─ Comando principal git
+```
+
 2. **Ver diferenças entre commits:**
 
 - *Executar este comando:*
 
 ```shell script
 git log -p -2
+```
+
+**Decomposição do comando:**
+
+```
+git log -p -2
+│   │   │  └─ Limitador: mostrar apenas 2 commits
+│   │   └─ Flag: mostrar patch (diferenças/mudanças)
+│   └─ Subcomando log (histórico)
+└─ Comando principal git
 ```
 
 3. **Ver quem modificou cada linha:**
@@ -1007,6 +1028,28 @@ git log -p -2
 git blame README.md
 ```
 
+**Decomposição do comando:**
+
+```
+git blame README.md
+│   │     └─ Arquivo a ser analisado
+│   └─ Subcomando blame (culpar/atribuir autoria)
+└─ Comando principal git
+```
+
+**O que é git blame?**
+
+Definição:
+- Mostra **linha por linha**:
+  - Quem escreveu/modificou
+  - Quando foi modificado
+  - Em qual commit
+  - Conteúdo da linha
+- **Por que o nome "blame" (culpa)?**
+  - Nome histórico para "atribuir responsabilidade"
+  - Não é necessariamente negativo
+  - Ajuda a entender contexto e histórico
+
 4. **Ver mudanças de um arquivo específico:**
 
 - *Executar este comando:*
@@ -1014,6 +1057,25 @@ git blame README.md
 ```shell script
 git log --follow receitas/massas/carbonara.md
 ```
+
+**Decomposição do comando:**
+
+```
+git log --follow receitas/massas/carbonara.md
+│   │   │        └─ Caminho do arquivo a ser rastreado
+│   │   └─ Flag: seguir renomeações/movimentações
+│   └─ Subcomando log (histórico)
+└─ Comando principal git
+```
+
+**O que é --follow?**
+
+Definição:
+- Rastreia o histórico de um arquivo **através de renomeações**
+- Continua seguindo mesmo se o arquivo:
+  - Foi renomeado
+  - Foi movido para outra pasta
+  - Teve seu caminho alterado
 
 5. **Buscar commits por autor:**
 
@@ -1023,15 +1085,118 @@ git log --follow receitas/massas/carbonara.md
 git log --author="Nome"
 ```
 
-- *Executar este comando:*
+**Decomposição do comando:**
 
-6. **Ver estado do repositório:**
+```
+git log --author="Nome"
+│   │   │         └─ Nome do autor a ser filtrado
+│   │   └─ Flag: filtrar por autor
+│   └─ Subcomando log (histórico)
+└─ Comando principal git
+```
+
+**O que é `--author`?**
+
+Definição:
+- Filtra commits pelo nome ou email do autor
+- Usa expressão regular (regex) para buscar
+- Case-sensitive por padrão (diferencia maiúsculas/minúsculas)
+
+Funciona com:
+- Nome completo: `"João Silva"`
+- Nome parcial: `"João"`
+- Email: `"joao@email.com"`
+- Parte do email: `"@email.com"`
+
+
+6. **Ver estado do repositório: `git status`**
+
+- *Executar este comando:*
 
 ```shell script
 git status
+```
+
+**Decomposição do Comando:**
+
+```
+git status
+│   └─ Subcomando status (estado/situação)
+└─ Comando principal git
+```
+
+**O que é `git status`?**
+
+Definição:
+- Mostra o estado atual do repositório
+- É como um painel de controle ou dashboard
+- Não modifica nada - apenas informa
+
+O que ele mostra:
+- ✅ Branch atual
+- ✅ Status de sincronização com remoto
+- ✅ Arquivos modificados
+- ✅ Arquivos na staging area
+- ✅ Arquivos não rastreados (untracked)
+- ✅ Conflitos de merge
+
+7. **Ver estado do repositório: `git remote -v`**
+
+- *Executar este comando:*
+
+```shell script
 git remote -v
+```
+
+**Decomposição do Comando**
+
+```
+git remote -v
+│   │      └─ Flag: verbose (detalhado) - mostra URLs
+│   └─ Subcomando remote (repositórios remotos)
+└─ Comando principal git
+```
+
+**O que é git remote?**
+
+Definição:
+
+- Gerencia **conexões com repositórios remotos** (GitHub, GitLab, Bitbucket, etc.)
+- Repositórios remotos são **versões do seu projeto hospedadas na internet ou rede**
+- Permite colaboração entre múltiplos desenvolvedores
+
+Analogia:
+- Como uma "lista de contatos" para repositórios
+- Cada remoto tem um **apelido** (alias) e um **endereço** (URL)
+
+8. **Ver estado do repositório: `git branch -a`**
+
+- *Executar este comando:*
+
+```shell script
 git branch -a
 ```
+
+**Decomposição do Comando**
+
+```
+git branch -a
+│   │      └─ Flag: all (todas) - locais + remotas
+│   └─ Subcomando branch (ramificações)
+└─ Comando principal git
+```
+ 
+**O que é git branch?**
+
+Definição:
+- Gerencia **branches** (ramificações) do projeto
+- Branches são **linhas de desenvolvimento paralelas**
+- Permite trabalhar em features sem afetar o código principal
+
+Analogia:
+- Como "universos paralelos" do seu projeto
+- Cada branch é uma versão independente
+- Podem ser mescladas (merged) posteriormente
 
 ### ✅ Checkpoint 4
 
@@ -1041,7 +1206,7 @@ git branch -a
 
 ---
 
-## 🎯 Desafio Final (10 minutos)
+## 🎯 Desafio Final
 
 ### Cada Equipe Deve
 
@@ -1053,6 +1218,38 @@ git branch -a
 git tag -a v1.0 -m "Versão 1.0: Catálogo inicial com 2 receitas"
 git push origin v1.0
 ```
+
+**Decomposição do Comando**
+- `git tag -a v1.0 -m "Versão 1.0: Catálogo inicial com 2 receitas"`
+```
+git tag -a v1.0 -m "Versão 1.0: Catálogo inicial com 2 receitas"
+│   │   │  │    │  └─ [4] Mensagem da tag
+│   │   │  │    └─ [3] Flag: message (mensagem)
+│   │   │  └─ [2] Nome da tag
+│   │   └─ [1] Flag: annotated (anotada)
+│   └─ Subcomando tag (etiqueta/marcador)
+└─ Comando principal git
+```
+- `git push origin v1.0`
+```
+git push origin v1.0
+│   │    │      └─ [3] Nome da tag a ser enviada
+│   │    └─ [2] Nome do repositório remoto
+│   └─ [1] Subcomando push (enviar/empurrar)
+└─ Comando principal git
+```
+
+**O que é uma Tag no Git?**
+
+Definição:
+- Tag = Marcador de um commit específico
+- Como um "bookmark" ou "snapshot" nomeado
+- Usado principalmente para marcar versões/releases
+
+Analogia:
+- Como um selo postal que marca um momento específico
+- Como uma foto instantânea de determinado estado do projeto
+- Como um marco histórico que não muda
 
 2. **Adicionar `.gitattributes`:**
 
